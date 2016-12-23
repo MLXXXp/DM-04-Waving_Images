@@ -10,12 +10,12 @@
 
 */
 
-#include "Arglib.h"
+#include <Arduboy2.h>
 #include "bitmaps.h"
 #include "extra.h"
 
 
-Arduboy arduboy;
+Arduboy2Base arduboy;
 Extra extra (arduboy);
 
 byte a = 0;
@@ -24,8 +24,8 @@ char sinus[128];
 
 void setup()
 {
-  arduboy.start();
-  arduboy.clearDisplay();
+  arduboy.begin();
+  arduboy.clear();
   arduboy.display();
   arduboy.drawBitmap(0, 8, TEAMarg, 128, 48, 1);
   arduboy.display();
@@ -55,7 +55,7 @@ void loop()
 
 void wave(const uint8_t *bitmap, uint16_t w, uint16_t h, uint16_t x, uint16_t y, uint16_t amp, float wl)
 {
-  arduboy.clearDisplay();
+  arduboy.clear();
   for (int j = 0; j < w; j++) {
     sinus[j] = y + (amp * sin(b + (j * wl)));
   }

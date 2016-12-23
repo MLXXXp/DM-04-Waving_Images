@@ -1,6 +1,6 @@
 #include "extra.h"
 
-Extra::Extra(Arduboy &a)
+Extra::Extra(Arduboy2Base &a)
 {
   arduboy = &a;
   sBuffer = arduboy->getBuffer();
